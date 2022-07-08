@@ -20,17 +20,18 @@
       .clear {
         clear: both;
       }
-      .mid {
-        
-      }
-      .contact-form-row {
-        width: 500px;
-        height: 45px;
-      }
       #contact-form {
         border: 1px #888 solid;
         width: 500px;
         padding: 25px;
+      }
+      .mid {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .contact-form-row {
+        width: 500px;
+        height: 45px;
       }
       .form-attribute {
         line-height: 30px;
@@ -39,8 +40,12 @@
         width: 250px;
         height: 30px;
       }
+      #contact-button-div {
+        margin-left: 212px;
+        margin-top: 30px;
+      }
       .form-button {
-        
+        padding: 7px 14px;
       }
     </style>
     
@@ -142,7 +147,7 @@
 
         <div class="contact-form-row">
           <div class="left form-attribute">
-            Requirement Specification
+            Requirement Specs (Configuration)
           </div>
           <div class="right">
             <input type="text" class="form-input" id="requirement" name="requirement">
@@ -165,7 +170,7 @@
         </div>
 
         <div class="contact-form-row">
-          <div>
+          <div id="contact-button-div">
             <input type="button" class="form-button" id="contact-button" name="contact-button" value="Submit" />
           </div>
         </div>
