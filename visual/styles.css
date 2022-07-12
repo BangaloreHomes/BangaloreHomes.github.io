@@ -73,3 +73,7 @@ footer {
   /* font-family: 'Times New Roman', Times, serif; */
   font-family: verdana;
 }
+.form-button:hover {
+  border: 1px solid #fff;
+  color: white;
+}
