@@ -52,6 +52,9 @@ footer {
 .form-input {
   width: 250px;
   height: 30px;
+  background-color: #8e8e71;
+  border: none;
+  border-radius: 7px;
 }
 #contact-button-div {
   margin-top: 30px;
@@ -59,5 +62,8 @@ footer {
   justify-content: center;
 }
 .form-button {
-  padding: 7px 14px;
+  padding: 10px 25px;
+  background-color: #77ac9a;
+  border: none;
+  border-radius: 7px;
 }
