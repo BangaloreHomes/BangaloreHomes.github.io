@@ -16,6 +16,7 @@ footer {
 #heading-title-link {
   text-decoration: underline;
   color: indianred;
+  font-family: verdana;
 }
 #sub-heading-title {
   text-align: center;
@@ -68,5 +69,6 @@ footer {
   background-color: #567b78;
   border: none;
   border-radius: 7px;
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-family: verdana;
 }
