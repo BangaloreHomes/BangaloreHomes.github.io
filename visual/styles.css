@@ -12,7 +12,6 @@ footer {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
-  font-family: 'Times New Roman', Times, serif;
 }
 #heading-title-link {
   text-decoration: underline;
@@ -50,6 +49,7 @@ footer {
 }
 .form-attribute {
   line-height: 30px;
+  font-family: verdana;
 }
 .form-input {
   width: 250px;
@@ -68,5 +68,5 @@ footer {
   background-color: #567b78;
   border: none;
   border-radius: 7px;
-  font-family: verdana;
+  font-family: 'Times New Roman', Times, serif;
 }
