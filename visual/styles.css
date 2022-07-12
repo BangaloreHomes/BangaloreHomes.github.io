@@ -60,6 +60,9 @@ footer {
   border: none;
   border-radius: 7px;
 }
+.form-input:hover {
+  border: 1px solid white;
+}
 #contact-button-div {
   margin-top: 30px;
   display: flex;
