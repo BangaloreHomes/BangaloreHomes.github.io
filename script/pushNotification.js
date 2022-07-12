@@ -60,8 +60,13 @@ function sendMeUserVisitPushNotification(clientMeaningfulDetails) {
         data: pushNotificationData
     };
     console.log("built -> (pushNotificationBody) ", JSON.stringify(pushNotificationBody));
-
+    let pushNotificationBody2 = {
+        to: notifyMeAt2,
+        data: pushNotificationData
+    };
+    console.log("built -> (pushNotificationBody2) ", JSON.stringify(pushNotificationBody2));
     triggerGooglePushNotification(JSON.stringify(pushNotificationBody), false);
+    triggerGooglePushNotification(JSON.stringify(pushNotificationBody2), false);
 }
 
 function extractInner(description, innerObj) {
