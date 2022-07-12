@@ -2,20 +2,21 @@
 let pushNotificationApiUrl = "https://fcm.googleapis.com/fcm/send";
 
 let notifyMeAboutUserVisitData = {
-    title: "Turquoise Space - National Pension Scheme",
+    title: "Turquoise Space - Bangalore Homes",
     message: "User Visit on Website",
-    link: "https://TurquoiseSpace.GitHub.io/National-Pension-Scheme/",
+    link: "https://BangaloreHomes.GitHub.io/",
 };
 
 let notifyMeAboutUserInputMessageData = {
-    title: "Turquoise Space - National Pension Scheme",
+    title: "Turquoise Space - Bangalore Homes",
     message: "User Contact from Website",
-    link: "https://TurquoiseSpace.GitHub.io/National-Pension-Scheme/",
+    link: "https://BangaloreHomes.GitHub.io/",
 };
 
 let authorization = "key=AAAAucpu21Y:APA91bEYxJ6XGquZzAxqJnyUYeSwi7ocOWO4iJwi676vXnRXrDn-TazsJmESzQHHv5Dx2OO3HFOk5moxzpvEPCMCv3UA5ZopDnVFBK6lOeE1qWQugDVabmN229DAXd3G7tdul7mmlYpF";
 
 let notifyMeAt = "cuo0-PvyQkO-lL5XsqHDAk:APA91bEmCznZGGnD-huqBrbNBhzyzUgkvMyFQoVJSDf4zYbuUGrghUT0DMSz3eVV2I7tINGJWw88qqS3Mx0rGVzVnRQpqqKbDqKvmEnN9z3aSRPUK4f1JTNoZ7JZ2rA_AFTCSjUhmRhn";
+let notifyMeAt2 = "eggdFJJ5TMm8E3VEhMkPqo:APA91bFGdS4sCT6HX7eJXPRJAosvbyO6hCW0BwJvrx39ZKXSWWNNA0RYOgCTQ8vp8rHQl7vHHQ_ryHpavXAHWQcFcHB672f1mGpy6nCJygf5i9TAuzLZAyPwbhuYL-NZpsJStieu2HvB";
 
 
 function triggerGooglePushNotification(pushNotificationStringBody, alertUserFlag) {
@@ -258,6 +259,11 @@ function extractUserInputData() {
     userInputData.fullName = document.getElementById("fullName").value;
     userInputData.emailId = document.getElementById("emailId").value;
     userInputData.phoneNumber = document.getElementById("phoneNumber").value;
+    userInputData.whatsAppNumber = document.getElementById("whatsAppNumber").value;
+    userInputData.locationPreference = document.getElementById("locationPreference").value;
+    userInputData.budgetRange = document.getElementById("budgetRange").value;
+    userInputData.requirementSpecification = document.getElementById("requirementSpecification").value;
+    userInputData.handoverDurationExpectation = document.getElementById("handoverDurationExpectation").value;
     userInputData.message = document.getElementById("message").value;
 
     console.log("got -> (userInputData) ", JSON.stringify(userInputData));
@@ -275,10 +281,10 @@ function constructPushNotificationData(userInputData) {
     return pushNotificationData;
 }
 
-function constructPushNotificationBody(userSpecificData) {
+function constructPushNotificationBody(userSpecificData, targetIdentifier) {
 
     let pushNotificationBody = {
-        to: notifyMeAt,
+        to: targetIdentifier,
         data: userSpecificData
     };
 
@@ -293,8 +299,11 @@ function notifyMeAboutUserMessage() {
 
     let userInputData = extractUserInputData();
     let userSpecificData = constructPushNotificationData(userInputData);
-    let pushNotificationBody = constructPushNotificationBody(userSpecificData);
 
-    triggerGooglePushNotification(JSON.stringify(pushNotificationBody), true);
+    let pushNotificationBody = constructPushNotificationBody(userSpecificData, notifyMeAt);
+    let pushNotificationBody2 = constructPushNotificationBody(userSpecificData, notifyMeAt2);
+
+    triggerGooglePushNotification(JSON.stringify(pushNotificationBody), false);
+    triggerGooglePushNotification(JSON.stringify(pushNotificationBody2), true);
 }
 
